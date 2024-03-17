@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+:root{
+  --index: calc(1vh + 1vw);
+  --color: #00c7ce;
+}
+@font-face {
+  font-family: BaronBlack;
+  src: url(./Fonts/BaronBlack.woff);
+}
+@font-face {
+  font-family: BaronBold;
+  src: url(./Fonts/BaronBold.woff);
+}
+@font-face {
+  font-family: SpaceBlack;
+  src: url(./Fonts/alienlinescyr_lat_symbol.otf);
+}
+@keyframes SpacePulsation {
+  0%{
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.521);
+  };
+  25%{
+    box-shadow: 0px 0px 10px 10px rgba(195, 0, 255, 0.521);
+  };
+  50%{
+    box-shadow: 0px 0px 10px 10px rgba(255, 0, 0, 0.521);
+  };
+  75%{
+    box-shadow: 0px 0px 10px 10px rgba(25, 0, 255, 0.521);
+  };
+  100%{
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.521);
+  };
+}
+@keyframes SpacePulsationMini {
+  0%{
+    box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.521);
+  };
+  25%{
+    box-shadow: 0px 0px 6px 6px rgba(195, 0, 255, 0.521);
+  };
+  50%{
+    box-shadow: 0px 0px 6px 6px rgba(255, 0, 0, 0.521);
+  };
+  75%{
+    box-shadow: 0px 0px 6px 6px rgba(25, 0, 255, 0.521);
+  };
+  100%{
+    box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.521);
+  };
+}
+
+
+
+
+.main{
+  display: grid;
+  grid-template-columns: [left]3fr [right]1fr;
+  background: radial-gradient(circle, #000000 0%, #0f0c1d 50%, #302b63 100%) fixed;
+  font-size: max(1em, 16px);
+  color: white;
+}
+.left .productInfo span{
+  color: white;
+  font-size: calc(var(--index) *.6);
+  font-family: SpaceBlack;
+}
+.left h2{
+  font-size: calc(var(--index) *.8);
+  color: white;
+  font-family: BaronBlack;
+}
+.left p{
+  font-size: calc(var(--index) *.8);
+  color: white;
+  font-family: BaronBlack;
+}
+.left{
+  margin-top: calc(var(--index) *2);
+  margin-left: calc(var(--index) *10);
+}
+.left header{
+  font-size: calc(var(--index) *.5);
+  padding-top:calc(var(--index) * 1);
+  padding-bottom:calc(var(--index) * 1);
+  position:fixed;
+  top: calc(var(--index) * 0);
+  left:calc(var(--index) * 0);
+  width:68%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.288);
+  box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.521);
+  border-radius: 10px;
+}
+.left header h1{
+  margin-left: calc(var(--index) *10);
+  font-family: BaronBlack;
+}
+.left header span{
+  font-family: SpaceBlack;
+}
+.left .container{
+  margin-top: calc(var(--index) *3);
+}
+.left .productCard {
+  margin-top: calc(var(--index) *1);
+  background-color: rgba(255, 255, 255, 0.144);
+  padding: calc(var(--index) *1);
+  box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.521);
+  border-radius: 15px;
+  margin-bottom: calc(var(--index) *1);
+  animation: SpacePulsation 10s linear infinite;
+
+ 
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 88%;
+  column-gap: calc(var(--index) *1);
+  align-items: center;
+}
+.left .productPic {
+  border-radius: 15px;
+  width: calc(var(--index) *3.5);
+  box-shadow: 0px 0px 6px 6px #ffffff69;
+}
+.left .productPic:hover{
+  width: calc(var(--index) *4.5);
+  animation: SpacePulsation 10s linear infinite;
+}
+
+.left .productInfo {
+  background-color: rgba(0, 0, 0, 0.288);
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--index) *.5);
+  border-radius: 15px;
+  box-shadow: 0px 0px 6px 6px #ffffff69;
+}
+.left .productInfo :hover{
+  font-family: BaronBold;
+}
+.left .productInfo .plus button{
+  width: calc(var(--index) *1.5);
+  height: calc(var(--index) *1);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: calc(var(--index) *.7);
+  box-shadow: 0px 0px 6px 6px #ffffff69;
+  color: white;
+  animation: SpacePulsationMini 10s linear infinite;
+  animation-delay: 0.5s;
+  margin-top: calc(var(--index) *.2);
+}
+.left .productInfo .plus button:hover{
+  box-shadow: 0px 0px 6px 6px #ffffff69;
+  animation: none;
+}
+.left .productInfo .minus button{
+  width: calc(var(--index) *1.5);
+  height: calc(var(--index) *1);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: calc(var(--index) *.7);
+  box-shadow: 0px 0px 6px 6px #ffffff69;
+  color: white;
+  font-family: BaronBold;
+  margin-top: calc(var(--index) *.2);
+  animation: SpacePulsationMini 10s linear infinite;
+  animation-delay: 1s;
+}
+.left .productInfo .minus button:hover{
+  box-shadow: 0px 0px 6px 6px #ffffff69;
+  animation: none;
+}
+.left .productInfo .delete button{
+  width: calc(var(--index) *1.5);
+  height: calc(var(--index) *1.5);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: calc(var(--index) *.6);
+  box-shadow: 0px 0px 6px 6px #ffffff69;
+  color: white;
+  margin-top: calc(var(--index) *.2);
+  background-image: url(./Img/delete.png);
+  background-size: contain;
+  animation: SpacePulsationMini 10s linear infinite;
+  animation-delay: 1.5s;
+}
+.left .productInfo .delete button:hover{
+  box-shadow: 0px 0px 6px 6px #ffffff69;
+  animation: none;
+}
+
+
+
+
+.right{
+  box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.521);
+  width: 75%;
+  height: 99.4%;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.288);
+}
+.right header h1{
+  margin-top: calc(var(--index) *1);
+  text-align: center;
+  font-size: calc(var(--index) *1);
+  font-family: BaronBlack;
+}
+.right footer h2{
+  margin-top: calc(var(--index) *1);
+  text-align: center;
+  font-size: calc(var(--index) *1);
+  font-family: BaronBlack;
+  line-height: calc(var(--index) *2);
+}
+.right footer .type2 h2{
+  font-family: SpaceBlack;
+  font-size: calc(var(--index) *1);
+}
+.right footer .type2 span{
+  font-size: calc(var(--index) *.8);
+}
+.right header h1 span{
+  font-family: SpaceBlack;
+}
+
+
